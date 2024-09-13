@@ -1,3 +1,4 @@
+import player from './player.js'
 let canvas = document.getElementById('game')
 let context = canvas.getContext('2d')
 let mario = document.getElementById('mario')
@@ -10,26 +11,7 @@ let game = {
         context.clearRect(0, 0, 600, 600)
     }
 }
-let player = {
-    position : {
-        x: 0,
-        y: 0
-    },
-    move: {
-        right: function(){
-            player.position.x += 1
-        },
-        left: function(){
-            player.position.x -= 1
-        },
-        up: function() {
-            player.position.y -= 1
-        },
-        down: function() {
-            player.position.y += 1
-        }
-    }
-}
+
 function gameloop() {
     game.draw()
     
@@ -58,7 +40,7 @@ document.addEventListener('keydown', (event) => {
             player.move.right()
           break;
         default:
-          return; // Quit when this doesn't handle the key event.
+          return;
       }
 
 })
