@@ -14,6 +14,11 @@ let game = {
 
 function gameloop() {
     game.draw()
+    player.speed = 2.5
+    if(!player.isGrounded()){
+        player.physics.applyGravity()
+    }
+    player.physics.forceToBeOnTop()
     
     setTimeout(() => {
         game.clear()
