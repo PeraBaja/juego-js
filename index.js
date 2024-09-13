@@ -40,7 +40,7 @@ function gameloop() {
     
     
 }
-document.addEventListener('key', (event) => {
+document.addEventListener('keydown', (event) => {
     event.preventDefault()
     console.log(event.key)
 
